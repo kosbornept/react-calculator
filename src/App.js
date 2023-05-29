@@ -166,6 +166,7 @@ function App() {
       <DigitButton digit="0" dispatch={dispatch} />
       <button className="span-two" onClick={() => dispatch({ type: ACTIONS.EVALUATE })}>=</button>
     </div>
+    <p className='footer'> Repo can be found <a href='https://github.com/kosbornept/react-calculator' target='_'>here</a>.<br />Favicon from <a href='https://icons8.com/' target='_'>Icons 8</a>.</p>
     <p className='deviceError'>Device screen size not supported. Please try another.</p>
     </>
   )
