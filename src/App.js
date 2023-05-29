@@ -97,6 +97,8 @@ function reducer(state, { type, payload }) {
         ...state,
         currentOperand: state.currentOperand.slice(0, -1)
       }
+      default: 
+        return
   }
 }
 
@@ -118,6 +120,8 @@ function evaluate({ currentOperand, previousOperand, operation }) {
     case "÷":
       computation = prev / current
       break
+    default: 
+      return
   }
   return computation.toString();
 }
@@ -137,6 +141,7 @@ function App() {
 
   
   return (
+    <>
     <div className="calculator-grid">
       <div className="output">
         <div className="previous-operand">{formatOperand(previousOperand)} {operation}</div>
@@ -161,6 +166,8 @@ function App() {
       <DigitButton digit="0" dispatch={dispatch} />
       <button className="span-two" onClick={() => dispatch({ type: ACTIONS.EVALUATE })}>=</button>
     </div>
+    <p className='deviceError'>Device screen size not supported. Please try another.</p>
+    </>
   )
 }
 
